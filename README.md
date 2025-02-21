@@ -11,3 +11,14 @@ AI ChatGPT / DeepSeek  тоже могут быть полезны, но они 
 
 ## Шаг 1: получить рашифрованную версию баз данных. Проще всего это было сделать в модифицириванных версиях приложения (YoWhatsApp и десятки подобных модов). В классическом приложении WhatsApp вам скорее всего придется колдовать с рутованием телефона, вытаскиванием из недр системы ключей и использованием утилит рашифровки *.crypt*-файлов.
 
+## примеры SQLite-запросов
+// print all tables from db with num of rows:
+$msg_db = new SQLite3("msgstore.db"); // chat database
+$wa_db = new SQLite3("wa.db");   // contacts database
+$res = $wa_db->query("SELECT name FROM sqlite_master WHERE type='table'"); // type also m/b 'VIEW','INDEX','TRIGGER'
+while ($row = $res->fetchArray())
+{
+	$tbl= $row[0];
+	echo "$tbl ";
+	echo '('.$wa_db->querySingle("SELECT COUNT(*) FROM $tbl ; ").') <br>';
+}
