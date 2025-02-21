@@ -1,0 +1,2 @@
+WhatsApp (like other services, like Youtube - revanced Youtube) blocks modified applications (like YoWhatsApp ).
+This was the reason for abandoning it, and the desire to keep chat history as part of my personal life was the reason for writing a parser for the SQLite message database msgstore.db. The database schema is constantly changing, so I have at least 2 versions of the msgstore.db database with different table organization schemes.
